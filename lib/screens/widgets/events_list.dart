@@ -6,14 +6,8 @@ class EventCard extends StatelessWidget {
   final String title;
   final String attendance;
   final String time;
+  final String status = 'upcoming';
   final Random random = Random();
-  final colorShades = [
-    [Colors.blue, Colors.blue.shade200, Colors.blue.shade600],
-    [Colors.red, Colors.red.shade200, Colors.red.shade600],
-    [Colors.green, Colors.green.shade200, Colors.green.shade600],
-    [Colors.purple, Colors.purple.shade200, Colors.purple.shade600],
-    [Colors.grey, Colors.grey.shade200, Colors.grey.shade600],
-  ];
 
   EventCard({
     required this.title,
@@ -27,10 +21,6 @@ class EventCard extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       height: 180,
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.topRight,
-            colors: colorShades[random.nextInt(5)]),
         borderRadius: BorderRadius.circular(15),
         boxShadow: [
           BoxShadow(
@@ -43,6 +33,14 @@ class EventCard extends StatelessWidget {
             spreadRadius: -6.0,
           ),
         ],
+        image: DecorationImage(
+          colorFilter: ColorFilter.mode(
+            Colors.black.withOpacity(0.35),
+            BlendMode.multiply,
+          ),
+          image: AssetImage('assets/card_${random.nextInt(11)}.png'),
+          fit: BoxFit.cover,
+        ),
       ),
       child: Stack(
         children: [
@@ -82,6 +80,20 @@ class EventCard extends StatelessWidget {
                       ),
                       const SizedBox(width: 7),
                       Text(attendance),
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(5),
+                  margin: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: Colors.black.withOpacity(0.4),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Row(
+                    children: [
+                      const SizedBox(width: 7),
+                      Text(status),
                     ],
                   ),
                 ),

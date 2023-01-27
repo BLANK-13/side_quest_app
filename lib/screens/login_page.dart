@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:uni_events/constants/contants.dart';
 
-import 'home.dart';
-
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -36,17 +34,30 @@ class _LoginPageState extends State<LoginPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
-                        Text(
-                          "Login",
-                          style: TextStyle(
-                              fontSize: 40,
-                              color: Theme.of(context).primaryColor),
-                        ),
-                        const SizedBox(height: 10),
                         // const Text("Login now to see what they are talking!",
                         //     style: TextStyle(
                         //         fontSize: 15, fontWeight: FontWeight.w400)),
-                        Image.asset("assets/login.png"),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 40),
+                          child: Image.asset(
+                            "assets/login.png",
+                            width: 200,
+                          ),
+                        ),
+
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 20),
+                          child: Text(
+                            "Login",
+                            style: TextStyle(
+                              fontSize: 29,
+                              color: Theme.of(context).primaryColor,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
                         TextFormField(
                           decoration: textInputDecoration.copyWith(
                               labelText: "Email",
@@ -109,17 +120,12 @@ class _LoginPageState extends State<LoginPage> {
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(30))),
                             child: const Text(
-                              "Sign In",
+                              "Log In",
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16),
                             ),
                             onPressed: () {
-                              GoRoute(
-                                path: RoutingConstants.home,
-                                pageBuilder: (context, state) {
-                                  return MaterialPage(child: HomePage());
-                                },
-                              );
+                              context.push(RoutingConstants.home);
                             },
                           ),
                         ),
@@ -138,12 +144,8 @@ class _LoginPageState extends State<LoginPage> {
                                     decoration: TextDecoration.underline),
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () {
-                                    GoRoute(
-                                      path: RoutingConstants.home,
-                                      pageBuilder: (context, state) {
-                                        return MaterialPage(child: HomePage());
-                                      },
-                                    );
+                                    context.pushReplacement(
+                                        RoutingConstants.register);
                                   }),
                           ],
                         )),

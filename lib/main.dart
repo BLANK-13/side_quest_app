@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:uni_events/constants/contants.dart';
-
-import 'screens/login_page.dart';
+import 'package:uni_events/router.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Events',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -18,7 +17,8 @@ class MyApp extends StatelessWidget {
           bodyText2: TextStyle(color: Colors.white),
         ),
       ),
-      home: const LoginPage(),
+      routeInformationParser: AppRouter().router.routeInformationParser,
+      routerDelegate: AppRouter().router.routerDelegate,
     );
   }
 }
