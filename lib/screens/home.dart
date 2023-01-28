@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uni_events/screens/event_page.dart';
 import 'package:uni_events/screens/widgets/events_list.dart';
 
 class HomePage extends StatelessWidget {
@@ -19,12 +20,21 @@ class HomePage extends StatelessWidget {
           ),
         ),
         body: ListView.builder(
+          cacheExtent: 20,
           itemCount: 20,
           itemBuilder: (BuildContext context, int index) {
-            return EventCard(
-              title: 'تجمع برمجةبالبايثون',
-              attendance: '12',
-              time: 'Feb 13th',
+            return InkWell(
+              child: EventCard(
+                title: 'تجمع برمجةبالبايثون',
+                attendance: '12',
+                time: 'Feb 13th',
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => EventPage()),
+                );
+              },
             );
           },
         ));

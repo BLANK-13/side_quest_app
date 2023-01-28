@@ -38,7 +38,7 @@ class _BottomBarWidgetState extends State<BottomBarWidget> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.white60,
+        backgroundColor: Colors.white,
         onPressed: () {},
         tooltip: 'Add Event',
         child: Icon(
