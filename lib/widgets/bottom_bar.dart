@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uni_events/screens/login_page.dart';
 
-import '../home.dart';
+import '../screens/home.dart';
 
 class BottomBarWidget extends StatefulWidget {
   const BottomBarWidget({Key? key}) : super(key: key);

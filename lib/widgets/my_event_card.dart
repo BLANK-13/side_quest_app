@@ -2,17 +2,16 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-class EventCard extends StatelessWidget {
+class MyEventCard extends StatelessWidget {
   final String title;
-  final String attendance;
+
   final String time;
-  final String status = 'upcoming';
+  final String status = 'declined';
   final Random random = Random();
 
-  EventCard({
+  MyEventCard({
     required this.title,
     required this.time,
-    required this.attendance,
   });
   @override
   Widget build(BuildContext context) {
@@ -50,9 +49,8 @@ class EventCard extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 5.0),
               child: Text(
                 title,
-                style: const TextStyle(
-                  fontSize: 18,
-                ),
+                style:
+                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
                 textAlign: TextAlign.center,
@@ -60,43 +58,10 @@ class EventCard extends StatelessWidget {
             ),
           ),
           Align(
-            alignment: Alignment.bottomLeft,
+            alignment: Alignment.topCenter,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  padding: const EdgeInsets.all(5),
-                  margin: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.4),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Row(
-                    children: [
-                      const Icon(
-                        Icons.people,
-                        color: Colors.white,
-                        size: 18,
-                      ),
-                      const SizedBox(width: 7),
-                      Text(attendance),
-                    ],
-                  ),
-                ),
-                Container(
-                  padding: const EdgeInsets.all(5),
-                  margin: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.4),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Row(
-                    children: [
-                      const SizedBox(width: 7),
-                      Text(status),
-                    ],
-                  ),
-                ),
                 Container(
                   padding: const EdgeInsets.all(5),
                   margin: const EdgeInsets.all(10),
@@ -115,7 +80,24 @@ class EventCard extends StatelessWidget {
                       Text(time),
                     ],
                   ),
-                )
+                ),
+                Container(
+                  padding: const EdgeInsets.all(5),
+                  margin: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: Colors.black.withOpacity(0.4),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Row(
+                    children: [
+                      const SizedBox(width: 4),
+                      Text(
+                        status,
+                        style: TextStyle(color: Colors.red),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),

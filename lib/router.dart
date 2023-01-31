@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:uni_events/constants/contants.dart';
 import 'package:uni_events/screens/login_page.dart';
 import 'package:uni_events/screens/register_page.dart';
-import 'package:uni_events/screens/widgets/bottom_bar.dart';
+import 'package:uni_events/widgets/bottom_bar.dart';
 
 class AppRouter {
   GoRouter router = GoRouter(

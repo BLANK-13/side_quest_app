@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:uni_events/screens/event_page.dart';
 import 'package:uni_events/widgets/events_list.dart';
 
-class HomePage extends StatelessWidget {
+import '../widgets/my_event_card.dart';
+
+class MyEventsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,18 +26,11 @@ class HomePage extends StatelessWidget {
           itemCount: 20,
           itemBuilder: (BuildContext context, int index) {
             return InkWell(
-              child: EventCard(
-                title: 'CTF event',
-                attendance: '12',
+              child: MyEventCard(
+                title: 'ِAssembly Programming',
                 time: 'Feb 13th',
               ),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => EventPage(title: 'CTF event')),
-                );
-              },
+              onTap: () {},
             );
           },
         ));

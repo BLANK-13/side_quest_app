@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:uni_events/screens/widgets/event_appBar.dart';
+import 'package:uni_events/widgets/event_appBar.dart';
 
 import '../constants/contants.dart';
 
@@ -14,6 +14,9 @@ class EventPage extends StatelessWidget {
   //     DateFormat('dd MMMM yyyy', translator.activeLanguageCode)
   //         .format(DateTime.parse(news.createdAt));
   final Random random = Random();
+  String title;
+
+  EventPage({required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +26,10 @@ class EventPage extends StatelessWidget {
           SliverAppBar(
             backgroundColor: Theme.of(context).primaryColor,
             leading: IconButton(
-              icon: const Icon(Icons.arrow_back_ios_rounded),
-              onPressed: () => context.pushReplacement(RoutingConstants.home),
-            ),
+                icon: const Icon(Icons.arrow_back_ios_rounded),
+                onPressed:
+                    () {} //context.pushReplacement(RoutingConstants.home),
+                ),
             pinned: true,
             snap: false,
             floating: true,
@@ -37,8 +41,8 @@ class EventPage extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
             sliver: SliverList(
               delegate: SliverChildListDelegate([
-                const Text(
-                  "تجمع بايثون",
+                Text(
+                  title,
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 18,

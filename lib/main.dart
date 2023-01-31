@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:uni_events/constants/contants.dart';
-import 'package:uni_events/screens/widgets/bottom_bar.dart';
+import 'package:uni_events/screens/home.dart';
+import 'package:uni_events/screens/login_page.dart';
+import 'package:uni_events/screens/my_events.dart';
+import 'package:uni_events/widgets/bottom_bar.dart';
 
 void main() => runApp(MyApp());
 
@@ -30,7 +33,7 @@ class MyApp extends StatelessWidget {
           bodyText2: TextStyle(color: Colors.white),
         ),
       ),
-      home: const BottomBarWidget(),
+      home: MyEventsPage(),
     );
   }
 }

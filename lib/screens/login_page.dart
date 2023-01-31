@@ -14,6 +14,9 @@ class _LoginPageState extends State<LoginPage> {
   final formKey = GlobalKey<FormState>();
   String email = "";
   String password = "";
+  bool passError = false;
+  bool emailError = false;
+
   final bool _isLoading = false;
 
   @override
@@ -34,9 +37,7 @@ class _LoginPageState extends State<LoginPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
-                        // const Text("Login now to see what they are talking!",
-                        //     style: TextStyle(
-                        //         fontSize: 15, fontWeight: FontWeight.w400)),
+                        //SizedBox(height: 300),
                         Padding(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 10, vertical: 40),
@@ -45,7 +46,6 @@ class _LoginPageState extends State<LoginPage> {
                             width: 200,
                           ),
                         ),
-
                         Padding(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 10, vertical: 20),
@@ -125,7 +125,11 @@ class _LoginPageState extends State<LoginPage> {
                                   TextStyle(color: Colors.white, fontSize: 16),
                             ),
                             onPressed: () {
-                              context.push(RoutingConstants.home);
+                              if (formKey.currentState!.validate()) {
+                                return;
+                              }
+
+                              // context.push(RoutingConstants.home);
                             },
                           ),
                         ),
@@ -144,8 +148,8 @@ class _LoginPageState extends State<LoginPage> {
                                     decoration: TextDecoration.underline),
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () {
-                                    context.pushReplacement(
-                                        RoutingConstants.register);
+                                    // context.pushReplacement(
+                                    //     RoutingConstants.register);
                                   }),
                           ],
                         )),
