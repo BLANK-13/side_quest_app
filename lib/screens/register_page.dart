@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:uni_events/screens/login_page.dart';
 import 'package:uni_events/widgets/bottom_bar.dart';
 
-import '../constants/contants.dart';
+import '../constants/constants.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});

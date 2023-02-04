@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:uni_events/constants/contants.dart';
+import 'package:uni_events/constants/constants.dart';
 import 'package:uni_events/screens/home.dart';
 import 'package:uni_events/screens/login_page.dart';
 import 'package:uni_events/screens/my_events.dart';

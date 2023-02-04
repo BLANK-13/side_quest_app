@@ -1,11 +1,5 @@
 import 'package:flutter/material.dart';
 
-class RoutingConstants {
-  static String home = '/';
-  static String login = '/login';
-  static String register = '/register';
-}
-
 class Constants {
   final primaryColor = const Color(0xFF006387);
 }

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:uni_events/widgets/event_appBar.dart';
 
-import '../constants/contants.dart';
+import '../constants/constants.dart';
 
 class EventPage extends StatelessWidget {
   //final NewsModel news;
@@ -32,8 +32,7 @@ class EventPage extends StatelessWidget {
                 icon: const Icon(Icons.arrow_back_ios_rounded),
                 onPressed: () {
                   Navigator.pop(context);
-                } //context.pushReplacement(RoutingConstants.home),
-                ),
+                }),
             pinned: true,
             snap: false,
             floating: true,
