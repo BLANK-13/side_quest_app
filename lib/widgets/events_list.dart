@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class EventCard extends StatelessWidget {
   final String title;
-  final String attendance;
+  final String category;
   final String time;
   final String status = 'upcoming';
   final Random random = Random();
@@ -12,7 +12,7 @@ class EventCard extends StatelessWidget {
   EventCard({
     required this.title,
     required this.time,
-    required this.attendance,
+    required this.category,
   });
   @override
   Widget build(BuildContext context) {
@@ -114,12 +114,12 @@ class EventCard extends StatelessWidget {
                   child: Row(
                     children: [
                       const Icon(
-                        Icons.people,
+                        Icons.category,
                         color: Colors.white,
                         size: 18,
                       ),
                       const SizedBox(width: 7),
-                      Text(attendance),
+                      Text(category),
                     ],
                   ),
                 ),

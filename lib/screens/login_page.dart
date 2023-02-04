@@ -2,6 +2,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:uni_events/constants/contants.dart';
+import 'package:uni_events/screens/register_page.dart';
+import 'package:uni_events/widgets/bottom_bar.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -14,8 +16,6 @@ class _LoginPageState extends State<LoginPage> {
   final formKey = GlobalKey<FormState>();
   String email = "";
   String password = "";
-  bool passError = false;
-  bool emailError = false;
 
   final bool _isLoading = false;
 
@@ -37,7 +37,6 @@ class _LoginPageState extends State<LoginPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
-                        //SizedBox(height: 300),
                         Padding(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 10, vertical: 40),
@@ -125,11 +124,12 @@ class _LoginPageState extends State<LoginPage> {
                                   TextStyle(color: Colors.white, fontSize: 16),
                             ),
                             onPressed: () {
-                              if (formKey.currentState!.validate()) {
+                              if (!formKey.currentState!.validate()) {
                                 return;
                               }
-
-                              // context.push(RoutingConstants.home);
+                              Navigator.of(context).pushReplacement(
+                                  MaterialPageRoute(
+                                      builder: (context) => BottomBarWidget()));
                             },
                           ),
                         ),
@@ -148,8 +148,10 @@ class _LoginPageState extends State<LoginPage> {
                                     decoration: TextDecoration.underline),
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () {
-                                    // context.pushReplacement(
-                                    //     RoutingConstants.register);
+                                    Navigator.of(context).pushReplacement(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                RegisterPage()));
                                   }),
                           ],
                         )),

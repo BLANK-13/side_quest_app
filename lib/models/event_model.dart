@@ -1,20 +1,59 @@
-class EventModel {
-  final int attendance;
-  final String description;
+class Event {
+  final String id;
   final String title;
-  final String date;
+  final String category;
+  final String dateTime;
+  final String description;
+  final String status;
 
-  EventModel({
-    required this.attendance,
-    required this.description,
+  Event({
+    required this.id,
     required this.title,
-    required this.date,
+    required this.category,
+    required this.dateTime,
+    required this.description,
+    required this.status,
   });
+  /*
+  
+  [
+  {
+    "id": 1,
+    "title": "Cybersecurity Day",
+    "category": "socialize",
+    "datetime": "2023-02-12 10:00:00",
+    "description": "A programming camp organized by CS department to enhance students programming skills.",
+    "status": "approved"
+    "attendance": 15
+  },
+  {
+    "id": 2,
+    "title": "Introduction of Data Science Workshop",
+    "category": "workshop",
+    "datetime": "2023-02-15 07:00:00",
+    "description": "A workshop organized by IT department.",
+    "status": "approved"
+    "attendance": 15
+  },
+  {
+    "id": 3,
+    "title": "Data Science Day",
+    "category": "socialize",
+    "datetime": "2023-02-20 08:00:00",
+    "description": "A conference",
+    "status": "approved"
+    "attendance": 15
+  }
+]
+  
+   */
 
-  factory EventModel.fromJson(Map<String, dynamic> json) => EventModel(
-        attendance: json['attendance'],
-        description: json['description'],
+  factory Event.fromJson(json) => Event(
+        id: json['id'].toString(),
         title: json['title'],
-        date: json['date'],
+        category: json['category'],
+        dateTime: json['datetime'],
+        description: json['description'],
+        status: json['status'],
       );
 }

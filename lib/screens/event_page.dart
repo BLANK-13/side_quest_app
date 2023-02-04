@@ -15,8 +15,11 @@ class EventPage extends StatelessWidget {
   //         .format(DateTime.parse(news.createdAt));
   final Random random = Random();
   String title;
+  String description;
+  String date;
 
-  EventPage({required this.title});
+  EventPage(
+      {required this.title, required this.description, required this.date});
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +30,9 @@ class EventPage extends StatelessWidget {
             backgroundColor: Theme.of(context).primaryColor,
             leading: IconButton(
                 icon: const Icon(Icons.arrow_back_ios_rounded),
-                onPressed:
-                    () {} //context.pushReplacement(RoutingConstants.home),
+                onPressed: () {
+                  Navigator.pop(context);
+                } //context.pushReplacement(RoutingConstants.home),
                 ),
             pinned: true,
             snap: false,
@@ -50,24 +54,17 @@ class EventPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 10),
-                const Text(
-                  '13',
+                Text(
+                  date,
                   style: TextStyle(
                     fontSize: 16,
                     color: Color(0xFF6A6666),
                   ),
                 ),
                 const SizedBox(height: 10),
-                const Text(
-                  ('Feb 13th'),
-                  style: TextStyle(
-                    fontSize: 11,
-                    color: Color(0xFF7C7C7C),
-                  ),
-                ),
                 const SizedBox(height: 10),
-                const Text(
-                  'aerjlghklasdjfghlsaj;erdhgl;aekjfhgl;aekjhgl;adkjfhgl;akdjfhg;ladkjfhgl;dakfhgl;adfhgl;adfkjghl;akdjhgl;haerjlghklasdjfghlsaj;erdhgl;aekjfhgl;aekjhgl;adkjfhgl;akdjfhg;ladkjfhgl;dakfhgl;adfhgl;adfkjghl;akdjhgl;haerjlghklasdjfghlsaj;erdhgl;aekjfhgl;aekjhgl;adkjfhgl;akdjfhg;ladkjfhgl;dakfhgl;adfhgl;adfkjghl;akdjhgl;haerjlghklasdjfghlsaj;erdhgl;aekjfhgl;aekjhgl;adkjfhgl;akdjfhg;ladkjfhgl;dakfhgl;adfhgl;adfkjghl;akdjhgl;haerjlghklasdjfghlsaj;erdhgl;aekjfhgl;aekjhgl;adkjfhgl;akdjfhg;ladkjfhgl;dakfhgl;adfhgl;adfkjghl;akdjhgl;haerjlghklasdjfghlsaj;erdhgl;aekjfhgl;aekjhgl;adkjfhgl;akdjfhg;ladkjfhgl;dakfhgl;adfhgl;adfkjghl;akdjhgl;haerjlghklasdjfghlsaj;erdhgl;aekjfhgl;aekjhgl;adkjfhgl;akdjfhg;ladkjfhgl;dakfhgl;adfhgl;adfkjghl;akdjhgl;haerjlghklasdjfghlsaj;erdhgl;aekjfhgl;aekjhgl;adkjfhgl;akdjfhg;ladkjfhgl;dakfhgl;adfhgl;adfkjghl;akdjhgl;haerjlghklasdjfghlsaj;erdhgl;aekjfhgl;aekjhgl;adkjfhgl;akdjfhg;ladkjfhgl;dakfhgl;adfhgl;adfkjghl;akdjhgl;haerjlghklasdjfghlsaj;erdhgl;aekjfhgl;aekjhgl;adkjfhgl;akdjfhg;ladkjfhgl;dakfhgl;adfhgl;adfkjghl;akdjhgl;haerjlghklasdjfghlsaj;erdhgl;aekjfhgl;aekjhgl;adkjfhgl;akdjfhg;ladkjfhgl;dakfhgl;adfhgl;adfkjghl;akdjhgl;haerjlghklasdjfghlsaj;erdhgl;aekjfhgl;aekjhgl;adkjfhgl;akdjfhg;ladkjfhgl;dakfhgl;adfhgl;adfkjghl;akdjhgl;haerjlghklasdjfghlsaj;erdhgl;aekjfhgl;aekjhgl;adkjfhgl;akdjfhg;ladkjfhgl;dakfhgl;adfhgl;adfkjghl;akdjhgl;haerjlghklasdjfghlsaj;erdhgl;aekjfhgl;aekjhgl;adkjfhgl;akdjfhg;ladkjfhgl;dakfhgl;adfhgl;adfkjghl;akdjhgl;haerjlghklasdjfghlsaj;erdhgl;aekjfhgl;aekjhgl;adkjfhgl;akdjfhg;ladkjfhgl;dakfhgl;adfhgl;adfkjghl;akdjhgl;haerjlghklasdjfghlsaj;erdhgl;aekjfhgl;aekjhgl;adkjfhgl;akdjfhg;ladkjfhgl;dakfhgl;adfhgl;adfkjghl;akdjhgl;haerjlghklasdjfghlsaj;erdhgl;aekjfhgl;aekjhgl;adkjfhgl;akdjfhg;ladkjfhgl;dakfhgl;adfhgl;adfkjghl;akdjhgl;haerjlghklasdjfghlsaj;erdhgl;aekjfhgl;aekjhgl;adkjfhgl;akdjfhg;ladkjfhgl;dakfhgl;adfhgl;adfkjghl;akdjhgl;haerjlghklasdjfghlsaj;erdhgl;aekjfhgl;aekjhgl;adkjfhgl;akdjfhg;ladkjfhgl;dakfhgl;adfhgl;adfkjghl;akdjhgl;haerjlghklasdjfghlsaj;erdhgl;aekjfhgl;aekjhgl;adkjfhgl;akdjfhg;ladkjfhgl;dakfhgl;adfhgl;adfkjghl;akdjhgl;haerjlghklasdjfghlsaj;erdhgl;aekjfhgl;aekjhgl;adkjfhgl;akdjfhg;ladkjfhgl;dakfhgl;adfhgl;adfkjghl;akdjhgl;haerjlghklasdjfghlsaj;erdhgl;aekjfhgl;aekjhgl;adkjfhgl;akdjfhg;ladkjfhgl;dakfhgl;adfhgl;adfkjghl;akdjhgl;haerjlghklasdjfghlsaj;erdhgl;aekjfhgl;aekjhgl;adkjfhgl;akdjfhg;ladkjfhgl;dakfhgl;adfhgl;adfkjghl;akdjhgl;haerjlghklasdjfghlsaj;erdhgl;aekjfhgl;aekjhgl;adkjfhgl;akdjfhg;ladkjfhgl;dakfhgl;adfhgl;adfkjghl;akdjhgl;haerjlghklasdjfghlsaj;erdhgl;aekjfhgl;aekjhgl;adkjfhgl;akdjfhg;ladkjfhgl;dakfhgl;adfhgl;adfkjghl;akdjhgl;haerjlghklasdjfghlsaj;erdhgl;aekjfhgl;aekjhgl;adkjfhgl;akdjfhg;ladkjfhgl;dakfhgl;adfhgl;adfkjghl;akdjhgl;haerjlghklasdjfghlsaj;erdhgl;aekjfhgl;aekjhgl;adkjfhgl;akdjfhg;ladkjfhgl;dakfhgl;adfhgl;adfkjghl;akdjhgl;haerjlghklasdjfghlsaj;erdhgl;aekjfhgl;aekjhgl;adkjfhgl;akdjfhg;ladkjfhgl;dakfhgl;adfhgl;adfkjghl;akdjhgl;haerjlghklasdjfghlsaj;erdhgl;aekjfhgl;aekjhgl;adkjfhgl;akdjfhg;ladkjfhgl;dakfhgl;adfhgl;adfkjghl;akdjhgl;h',
+                Text(
+                  description * 100,
                   style: TextStyle(
                     fontSize: 14,
                     color: Color(0xFF131314),
@@ -84,9 +81,7 @@ class EventPage extends StatelessWidget {
                     "I'm Going !",
                     style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
-                  onPressed: () {
-                    context.pushNamed(RoutingConstants.home);
-                  },
+                  onPressed: () {},
                 ),
               ]),
             ),

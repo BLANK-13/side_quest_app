@@ -3,6 +3,7 @@ import 'package:uni_events/constants/contants.dart';
 import 'package:uni_events/screens/home.dart';
 import 'package:uni_events/screens/login_page.dart';
 import 'package:uni_events/screens/my_events.dart';
+import 'package:uni_events/screens/register_page.dart';
 import 'package:uni_events/widgets/bottom_bar.dart';
 
 void main() => runApp(MyApp());
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
           bodyText2: TextStyle(color: Colors.white),
         ),
       ),
-      home: MyEventsPage(),
+      home: RegisterPage(),
     );
   }
 }

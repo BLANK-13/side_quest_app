@@ -1,6 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:uni_events/screens/login_page.dart';
+import 'package:uni_events/widgets/bottom_bar.dart';
 
 import '../constants/contants.dart';
 
@@ -138,7 +140,8 @@ class _RegisterPageState extends State<RegisterPage> {
                         style: TextStyle(color: Colors.white, fontSize: 16),
                       ),
                       onPressed: () {
-                        context.push(RoutingConstants.home);
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (context) => BottomBarWidget()));
                       },
                     ),
                   ),
@@ -156,7 +159,9 @@ class _RegisterPageState extends State<RegisterPage> {
                               decoration: TextDecoration.underline),
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
-                              context.pushReplacement(RoutingConstants.login);
+                              Navigator.of(context).pushReplacement(
+                                  MaterialPageRoute(
+                                      builder: (context) => LoginPage()));
                             }),
                     ],
                   )),

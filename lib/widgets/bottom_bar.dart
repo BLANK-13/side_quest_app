@@ -1,5 +1,10 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:uni_events/models/event_model.dart';
 import 'package:uni_events/screens/login_page.dart';
+import 'package:uni_events/screens/my_events.dart';
+import 'package:http/http.dart' as http;
 
 import '../screens/home.dart';
 
@@ -12,7 +17,7 @@ class BottomBarWidget extends StatefulWidget {
 
 class _BottomBarWidgetState extends State<BottomBarWidget> {
   int currentP = 0;
-  final List<Widget> pages = [HomePage(), const LoginPage()];
+  final List<Widget> pages = [HomePage(), MyEventsPage()];
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +27,8 @@ class _BottomBarWidgetState extends State<BottomBarWidget> {
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
+            icon: Icon(Icons.event),
+            label: 'My Events',
           ),
         ],
         selectedItemColor: Colors.white,
